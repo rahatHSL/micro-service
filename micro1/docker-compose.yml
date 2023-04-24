@@ -1,0 +1,17 @@
+version: "3"
+
+services:
+  app:
+    build: .
+    container_name: micro1
+    ports:
+      - "4000:4000"
+    command:
+      "npm run start"
+    logging:
+      options:
+        max-size: "10M"
+      
+networks:
+  default:
+    name: micro_backend
